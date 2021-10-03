@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listening Room</title>
+    <link rel="icon" href="../images/aa-logo.jpg"/>
+    <!--Bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!-- RecordRTC -->
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+    <!--CSS-->
+    <link rel="stylesheet" href="../css/custom.css"/>
+    <!--FontAwesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+        <img src="../images/aa-logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+        American Airlines
+        </a>
+    </nav>
+    <div class="container-fluid fill">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container text-center">
+              <h1 class="display-4">Welcome to the Listening Room</h1>
+              <p class="lead">Live transcriptions will appear below when spoken.</p>
+              <div class="row mx-auto" style="width: 30%";>
+                  <div class="col text-center">
+                        <a href="./record.html"><button class="btn btn-primary" type="button"><i class="fas fa-arrow-left mr-2"></i>Record</button></a>
+                  </div>
+                  <div class="col text-center">
+                        <a href="../index.html"><button class="btn btn-primary" type="button">Return Home<i class="fas fa-arrow-right ml-2"></i></button></a>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-center h-100">
+              <textarea class="form-control h-50 mt-3" id="message" readonly style="overflow-y: scroll;"></textarea>
+          </div>
+    </div>
+    <script src="../js/index.js"></script>
+</body>
+</html>
