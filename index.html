@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AA-Inflight Transcriber</title>
+  <link rel="icon" href="./images/aa-logo.jpg"/>
+  <!--Bootstrap-->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+  <!--CSS-->
+  <link rel="stylesheet" href="css/custom.css"/>
+  <!-- <script type="module" src="./js/ReadTranscript.js"></script> -->
+  <!-- <script type="module" src="./js/WriteToTranscript.js"></script> -->
+  <!-- <script type="module" src="./js/TranscriptEdit.js"></script> -->
+</head>
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">
+      <img src="../images/aa-logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+      American Airlines
+      </a>
+  </nav>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1 class="display-4">AA-Inflight Closed Captioning</h1>
+      <p class="lead">Sunhacks 2021 - Eric Waters, Clark Shaeffer, and Collin Wood</p>
+      <hr class="mt-4">
+      <p>Transcribes in-fight announcements in real-time so that you don't miss a beat.</p>
+    </div>
+    <form action="./html/record.html" onsubmit="validateForm()" class="text-center">
+      <p>Input a flight number:</p>
+      <input id="flightInput" type="text" class="form-control w-50 my-3 mx-auto text-center" required autocomplete="off">
+      <button type="submit" class="btn btn-primary w-25">Proceed</button>
+    </form>
+  </div>
+  <script src="js/data.js"></script>
+</body>
+</html>
