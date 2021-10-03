@@ -1,5 +1,7 @@
 import TranscriptEdit from "./TranscriptEdit.js";
-import NewFlight from "./NewFlight.js";
+import ReadTranscript from "./ReadTranscript.js";
+
+const flightId = sessionStorage.getItem('flightNumber');
 
 // required dom elements
 const buttonEl = document.getElementById('button');
@@ -14,6 +16,17 @@ let recorder;
 let fullMessage = '';
 let lastSentence = '';
 
+let firstEntry = true;
+
+
+let transcript = await ReadTranscript(flightId);
+transcript.forEach((obj) => {
+  fullMessage += obj.timestamp + ' ' + obj.text + '\n';
+});
+firstEntry = false;
+
+messageEl.innerHTML = fullMessage;
+
 // runs real-time transcription and handles global vars
 const run = async () => {
   if (isRecording) {
@@ -26,7 +39,7 @@ const run = async () => {
     var fullLine = date + ' ' + time + ': ' + lastSentence + '\n';
 
     var obj = { text: lastSentence, timestamp: dateTime };
-    await TranscriptEdit(obj, sessionStorage.getItem('flightNumber'));
+    await TranscriptEdit(obj, flightId);
 
     fullMessage += fullLine;
 
@@ -43,6 +56,7 @@ const run = async () => {
       recorder = null;
     }
   } else {
+
     const response = await fetch('http://localhost:5000'); // get temp session token from server.js (backend)
     const data = await response.json();
     const { token } = data;

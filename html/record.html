@@ -30,14 +30,6 @@
             <div class="container text-center">
               <h1 id="flightTitle" class="display-4">Live transcript for AA Flight </h1>
               <p class="lead">Click on the record button to get started.</p>
-              <!-- <div class="row mx-auto" style="width: 30%";>
-                  <div class="col text-center">
-                        <a href="../index.html"><button class="btn btn-primary" type="button"><i class="fas fa-arrow-left mr-2"></i>Return Home</button></a>
-                  </div>
-                  <div class="col text-center">
-                        <a href="./listen.html"><button class="btn btn-primary" type="button">Listen In<i class="fas fa-arrow-right ml-2"></i></button></a>
-                  </div>
-              </div> -->
               <div class="row mx-auto justify-content-center">
                 <a href="../index.html"><button class="btn btn-primary" type="button">Return Home</button></a>
               </div>
@@ -46,6 +38,7 @@
           <div class="text-center h-100">
               <p id="real-time-title" class="text-primary">Click start to begin.</p>
               <button type="button" class="btn btn-primary" id="button">Record</button>
+              <button type="button" class="btn btn-danger" onclick="if(confirm('Are you sure you want to delete this flight?')) { endFlight() }">End Flight</button>
               <textarea class="form-control h-50 mt-3" id="message" readonly style="overflow-y: scroll;"></textarea>
           </div>
     </div>

@@ -6,7 +6,7 @@ import ReadTranscript from './ReadTranscript.js';
 // 	timestamp: new Date()
 // }
 const WriteToTranscript = async (obj, flightId) => {
-	let current = await ReadTranscript();
+	let current = await ReadTranscript(flightId);
 	current.push(obj);
 	
 	const flight = doc(db, "flights", flightId);
