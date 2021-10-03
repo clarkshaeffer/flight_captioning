@@ -57,7 +57,7 @@ const run = async () => {
     }
   } else {
 
-    const response = await fetch('http://localhost:5000'); // get temp session token from server.js (backend)
+    const response = await fetch('aa-inflight-captions.herokuapp.com'); // get temp session token from server.js (backend)
     const data = await response.json();
     const { token } = data;
 
