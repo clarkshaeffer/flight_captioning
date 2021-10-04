@@ -7,11 +7,13 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+console.log('AssemblyAI Token removed from GitHub. Please insert your own token on line 16').
+
 app.get('/', async (req, res) => {
   try {
     const response = await axios.post('https://api.assemblyai.com/v2/realtime/token', // use account token to get a temp user token
       { expires_in: 3600 }, // can set a TTL timer in seconds.
-      { headers: { authorization: '0f7f40275cb4488fb51a509b9ebfeb7c' } }); // token
+      { headers: { authorization: '{token}' } }); // token
     const { data } = response;
     res.json(data);
   } catch (error) {
