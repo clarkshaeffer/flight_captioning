@@ -57,11 +57,7 @@ const run = async () => {
     }
   } else {
 
-<<<<<<< HEAD
     const response = await fetch('https://aa-inflight-transcriber-server.herokuapp.com/'); // get temp session token from server.js (backend)
-=======
-    const response = await fetch('https://aa-inflight-captions.herokuapp.com/'); // get temp session token from server.js (backend)
->>>>>>> 949b06a29a49f3e56b2955e78c05edfe9a988f3f
     const data = await response.json();
     const { token } = data;
 
