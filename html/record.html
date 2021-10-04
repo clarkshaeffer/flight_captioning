@@ -30,7 +30,12 @@
     <div class="container-fluid">
       <div class="text-center mt-3">
         <h1 id="flightTitle" class="display-4">Live transcript for AA Flight </h1>
-        <a href="../index.html"><button class="btn btn-primary mt-2" type="button"><i class="fas fa-arrow-left mr-2"></i>Change Flight</button></a>
+        <button class="btn btn-primary mt-2" type="button" onclick="goHome()"><i class="fas fa-arrow-left mr-2"></i>Change Flight</button>
+        <script>
+          function goHome() {
+            location.href='../index.html';
+          }
+        </script>
       </div>
       <div class="text-center mt-3">
           <p id="real-time-title" class="text-primary">Click "Record" to begin.</p>
@@ -44,7 +49,7 @@
     </div>
     <!--Footer-->
     <div class="text-center">
-      <p class="text-primary">Created at Sunhacks 2021 by Eric Waters, Clark Shaeffer, and Collin Wood</p>
+      <p class="text-primary small">Created at Sunhacks 2021 by Eric Waters, Clark Shaeffer, and Collin Wood</p>
     </div>
   </div>
   <!--Scripts-->
