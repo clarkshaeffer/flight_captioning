@@ -2,8 +2,8 @@ import { collection, getDocs, setDoc, doc } from 'https://www.gstatic.com/fireba
 import WriteToTranscript from "./WriteToTranscript.js";
 import ReadTranscript from "./ReadTranscript.js";
 import db from './firebase.js';
+
 const TranscriptEdit = async (obj, flightId) => {
-	console.log(flightId);
 	let transcript = await ReadTranscript();
 	let allFlights = [];
 	const querySnapshot = await getDocs(collection(db, "flights"));
@@ -22,5 +22,4 @@ const TranscriptEdit = async (obj, flightId) => {
 	return transcript;
 }
 
-// TranscriptEdit();
 export default TranscriptEdit;

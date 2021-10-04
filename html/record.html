@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recording Room</title>
+    <!--AA Tab Icon-->
     <link rel="icon" href="../images/aa-logo.jpg"/>
     <!--Bootstrap-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -19,29 +20,35 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 </head>
 <body>
+  <div class="d-flex flex-column h-100">
+    <!--Navbar-->
     <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">
-        <img src="../images/aa-logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
-        American Airlines
-        </a>
+      <a class="navbar-brand" href="https://www.aa.com/" target="_blank">
+      <img src="../images/aa-logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">American Airlines</a>
     </nav>
-    <div class="container-fluid fill">
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container text-center">
-              <h1 id="flightTitle" class="display-4">Live transcript for AA Flight </h1>
-              <p class="lead">Click on the record button to get started.</p>
-              <div class="row mx-auto justify-content-center">
-                <a href="../index.html"><button class="btn btn-primary" type="button">Return Home</button></a>
-              </div>
-            </div>
-          </div>
-          <div class="text-center h-100">
-              <p id="real-time-title" class="text-primary">Click start to begin.</p>
-              <button type="button" class="btn btn-primary" id="button">Record</button>
-              <!-- <button type="button" class="btn btn-danger" onclick="if(confirm('Are you sure you want to delete this flight?')) { endFlight() }">End Flight</button> -->
-              <textarea class="form-control h-50 mt-3" id="message" readonly style="overflow-y: scroll;"></textarea>
-          </div>
+    <!--Main Content-->
+    <div class="container-fluid">
+      <div class="text-center mt-3">
+        <h1 id="flightTitle" class="display-4">Live transcript for AA Flight </h1>
+        <a href="../index.html"><button class="btn btn-primary mt-2" type="button"><i class="fas fa-arrow-left mr-2"></i>Change Flight</button></a>
+      </div>
+      <div class="text-center mt-3">
+          <p id="real-time-title" class="text-primary">Click "Record" to begin.</p>
+          <button type="button" class="btn btn-success" id="button">Record</button>
+          <button id="endFlightButton" type="button" class="btn btn-danger">End Flight</button>
+      </div>
     </div>
-    <script type="module" src="../js/index.js"></script>
+    <!--Textarea (extends to footer)-->
+    <div class="flex-grow-1 mt-3 mx-3">
+      <textarea class="form-control h-100" id="message" readonly style="overflow-y: scroll;"></textarea>
+    </div>
+    <!--Footer-->
+    <div class="text-center">
+      <p class="text-primary">Created at Sunhacks 2021 by Eric Waters, Clark Shaeffer, and Collin Wood</p>
+    </div>
+  </div>
+  <!--Scripts-->
+  <script type="module" src="../js/index.js"></script>
+  <script type="module" src="../js/endFlight.js"></script>
 </body>
 </html>

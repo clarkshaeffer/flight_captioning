@@ -9,15 +9,12 @@ const messageEl = document.getElementById('message');
 const titleEl = document.getElementById('real-time-title');
 
 // set initial state of application vars
-//messageEl.style.display = 'none';
 let isRecording = false;
 let socket;
 let recorder;
 let fullMessage = '';
 let lastSentence = '';
-
 let firstEntry = true;
-
 
 let transcript = await ReadTranscript(flightId);
 transcript.forEach((obj) => {
@@ -29,6 +26,7 @@ messageEl.innerHTML = fullMessage;
 
 // runs real-time transcription and handles global vars
 const run = async () => {
+  titleEl.innerText = "Hold on...";
   if (isRecording) {
 
     var today = new Date();
@@ -57,11 +55,11 @@ const run = async () => {
     }
   } else {
 
-    const response = await fetch('https://aa-inflight-transcriber-server.herokuapp.com/'); // get temp session token from server.js (backend)
+    const response = await fetch('https://aa-inflight-transcriber-server.herokuapp.com/');
     const data = await response.json();
     const { token } = data;
 
-    socket = await new WebSocket(`wss://api.assemblyai.com/v2/realtime/ws?sample_rate=16000&token=${token}`); // establish wss with AssemblyAI (AAI) at 16000 sample rate
+    socket = new WebSocket(`wss://api.assemblyai.com/v2/realtime/ws?sample_rate=16000&token=${token}`); // establish wss with AssemblyAI (AAI) at 16000 sample rate
 
     // handle incoming messages to display transcription to the DOM
     const texts = {};
@@ -87,7 +85,6 @@ const run = async () => {
 
     socket.onopen = () => {
       // once socket is open, begin recording
-      messageEl.style.display = '';
       navigator.mediaDevices.getUserMedia({ audio: true })
         .then((stream) => {
           recorder = new RecordRTC(stream, {
@@ -121,8 +118,8 @@ const run = async () => {
 
   isRecording = !isRecording;
   buttonEl.innerText = isRecording ? 'Stop' : 'Record';
-  buttonEl.className = isRecording ? 'btn btn-danger' : 'btn btn-primary';
-  titleEl.innerText = isRecording ? 'Click stop to end recording!' : 'Click start to begin recording!'
+  buttonEl.className = isRecording ? 'btn btn-danger' : 'btn btn-success';
+  titleEl.innerText = isRecording ? 'Listening! Click stop to end recording.' : 'Click \"Record\" to begin recording!'
 };
 
 buttonEl.addEventListener('click', () => run());

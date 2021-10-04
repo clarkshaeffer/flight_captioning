@@ -1,7 +1,11 @@
-.fill { 
-    min-height: 100% !important;
-    height: 100% !important;
-}
 html, body {
     height: 100%;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    height: 2.5rem;
+    width: 100%;
+    text-align: center;
 }
