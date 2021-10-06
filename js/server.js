@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-console.log('AssemblyAI Token removed from GitHub. Please insert your own token on line 16').
+console.log('AssemblyAI Token removed from GitHub. Please insert your own token on line 16');
 
 app.get('/', async (req, res) => {
   try {
