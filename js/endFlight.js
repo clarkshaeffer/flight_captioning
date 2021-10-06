@@ -5,7 +5,7 @@ let flightNumber = sessionStorage.getItem('flightNumber');
 
 const endFlight = async (flightId) => {
     await deleteDoc(doc(db, "flights", flightId));
-    window.location.href = "../index.html";
+    location.href = location.protocol + '//' + location.host;
 }
 
 document.getElementById('endFlightButton').addEventListener("click", async () => {
